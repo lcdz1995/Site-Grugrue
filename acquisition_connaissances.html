@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+
+	<div id="header">
+		<h1>Grugrue</h1>
+	</div>
+
+	<div id="nav">
+		<a href="./home_page.html">Accueil</a><br>
+		<a href="./proposition_recherche.html">Proposition de recherche</a><br>
+		<a href="./acquisition_connaissances.html">Acquisition des connaissances</a><br>
+		<a href="./demarche_experimentale.html">D&eacute;marche exp&eacute;rimentale </a><br>
+		<a href="./difficultes_rencontres.html">Difficult&eacute;s rencontr&eacute;es </a><br>
+		<a href="./resultat_recherche.html">Analyse des r&eacute;sultats de la recherche</a><br>
+		<a href="./conclusion_recherche.html">Conclusion de la recherche et bilan</a><br>
+		<a href="./bibliographie_telechargement.html">Bibliographie et t&eacute;l&eacute;chargement</a><br>
+	</div>
+
+	<div id="section">
+		<h2>Acquisition des connaissances</h2>
+		<h3>"Manifest" de l'extension</h3>
+		<p>
+			Le coeur d'une extension Google Chrome est le fichier "manifest.json" qui se situe &agrave; la racine du projet. Ce fichier ne peut pas &ecirc;tre appel&eacute; autrement et contient toutes les informations permettant l'ex&eacute;cution de l'application. Ce fichier contient, entre autres, le nom de l'extension, sa version, sa 
+			description et son ic&ocirc;ne qui seront affich&eacute;s dans le menu des extensions sur le navigateur. On y retrouve aussi la version du "manifest". La version du "manifest" doit &ecirc;tre 2 si on veut l'exporter sur Google Chrome, puisque le navigateur ne supporte plus les extensions de la version 1. La diff&eacute;rence 
+			entre les deux versions est le nom des propri&eacute;t&eacute;s (ex : "background_page" est maintenant "background"), des changements pour la s&eacute;curit&eacute;, 
+			des changements sur les actions des onglets et du navigateur, etc. Le fichier "manifest" contient aussi les permissions que notre extension va 
+			voir, tel que "storage", pour permettre de stocker des donn&eacute;es, ou bien "tabs", pour pouvoir jouer avec les onglets. Il y a aussi la propri&eacute;t&eacute;
+			qui d&eacute;finit la page d'option qui est en fait une page HTML que l'on fait et qui s'ouvrira quand on cliquera sur "Options" vis-&agrave;-vis notre 
+			application dans le menu des extensions et qui permettra de changer certains param&egrave;tres au choix. Une autre propri&eacute;t&eacute; int&eacute;ressante du "manifest" 
+			est "background" qui permet de faire rouler des scripts en arri&egrave;re-plan. Finalement, nous avons utilis&eacute; la propri&eacute;t&eacute; "default_popup" pour 
+			d&eacute;finir le pop-up (page HTML) qui s'affichera lorsqu'on clique sur l'ic&ocirc;ne de notre extension dans le navigateur. Il existe des dizaines d'autres 
+			propri&eacute;t&eacute;s, nous avons pr&eacute;sent&eacute; bri&egrave;vement celles que nous avons utilis&eacute;. 
+		</p>
+		<br>
+		<h3>Page d'option</h3>
+		<p>
+			Cette page contient ce que l'on veut. G&eacute;n&eacute;ralement elle contient des champs texte, des listes d&eacute;roulantes et un bouton "Sauvegarder" en bas comme toute bonne page d'option. 
+		</p>
+		<br>
+		<h3>Scripts en "background"</h3>
+		<p>
+			Une application peut avoir des scripts qui s'ex&eacute;cutent en permanence en arri&egrave;re-plan.
+			Dans notre cas, ceci nous a &eacute;t&eacute; utile pour notre "keylogger" parce qu'on a pu faire ex&eacute;cuter un script qui mettait un "listener" enregistrant les touches press&eacute;es sur chaque nouvel onglet.
+		</p>
+		<br>
+		<h3>"Mousetrap"</h3>
+		<p>
+			"Mousetrap" est une librairie qui nous &eacute;t&eacute; tr&egrave;s utile pour g&eacute;rer les raccourcis clavier en JavaScript dans notre extension. Tout ce qu'il faut faire, c'est t&eacute;l&eacute;charger le fichier "mousetrap.js" 
+			sur le site et le mettre avec les autres scripts. Ensuite, on peut lier les raccourcis clavier &agrave; des fonctions JavaScript.
+		</p>
+		<br>
+		<h3>"Local storage"</h3>
+		<p>
+			Ceci est une fonctionnalit&eacute; qui se rapproche des "cookies", on stocke des donn&eacute;es localement dans le navigateur. Elle est tr&egrave;s simple d'utilisation et nous a &eacute;t&eacute; tr&egrave;s utile. Pour enregistrer une cha&icirc;ne de caract&egrave;res, 
+			il faut une cl&eacute; pour retrouver l'information par la suite et, bien s&ucirc;r une cha&icirc;ne caract&egrave;res. 
+		</p>
+		<br>
+		<h3>"Chrome storage"</h3>
+		<p>
+			Ceci est une technologie ayant le m&ecirc;me principe que "local storage", sauf que cette derni&egrave;re se r&eacute;initialise quand le navigateur se ferme. "Chrome storage" garde les &eacute;l&eacute;ments en m&eacute;moire tant qu'on ne les supprime pas. 
+		</p>
+		<br>
+		<h3>Fonctions asynchrones</h3>
+		<p>
+			Le JavaScript est un langage "monothread", donc une op&eacute;ration de longue dur&eacute;e peut emp&ecirc;cher d'autres processus de s'ex&eacute;cuter. Pour r&eacute;soudre le probl&egrave;me, on utilise les "callback" dont on a parl&eacute; un peu plus haut. 
+			Cela peut facilement rendre la programmation tr&egrave;s complexe. Nous avons d&ucirc; apprendre comment g&eacute;rer cette fa&ccedil;on de faire que nous n'avions jamais vue auparavant. 
+		</p>
+		<br>
+	</div>
+
+	<div id="footer">
+		Copyright &copy; Les Grutiers
+	</div>
+
+</body>
+</html>

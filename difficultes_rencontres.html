@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+
+	<div id="header">
+		<h1>Grugrue</h1>
+	</div>
+
+	<div id="nav">
+		<a href="./home_page.html">Accueil</a><br>
+		<a href="./proposition_recherche.html">Proposition de recherche</a><br>
+		<a href="./acquisition_connaissances.html">Acquisition des connaissances</a><br>
+		<a href="./demarche_experimentale.html">D&eacute;marche exp&eacute;rimentale </a><br>
+		<a href="./difficultes_rencontres.html">Difficult&eacute;s rencontr&eacute;es </a><br>
+		<a href="./resultat_recherche.html">Analyse des r&eacute;sultats de la recherche</a><br>
+		<a href="./conclusion_recherche.html">Conclusion de la recherche et bilan</a><br>
+		<a href="./bibliographie_telechargement.html">Bibliographie et t&eacute;l&eacute;chargement</a><br>
+	</div>
+
+	<div id="section">
+		<h2>Difficult&eacute;s rencontr&eacute;es</h2>
+		<h3>Version de "manifest"</h3>
+		<p>
+			Au tout d&eacute;but du projet, pour nous aider &agrave; lancer notre application, nous avons tout d'abord cherch&eacute; sur Google un tutoriel complet pour concevoir une premi&egrave;re extension simple, pour conna&icirc;tre les bases. 
+			Nous avons tr&egrave;s vite trouv&eacute; un site expliquant en d&eacute;tail comment faire pour faire une extension quand on est des d&eacute;butants. Nous avons commenc&eacute; &agrave; suivre les &eacute;tapes &agrave; la lettre, mais rendu au moment où 
+			l'on importait notre projet dans Google Chrome, il y avait une erreur de compilation. Nous avons donc recommenc&eacute; plusieurs fois les &eacute;tapes du tutoriel, mais &agrave; chaque fois, la m&ecirc;me erreur survenait. 
+			Apr&egrave;s avoir fait des recherches sur cette erreur, nous avons compris que le tutoriel fonctionnait pour la version 1 du "manifest" et que Google Chrome ne prend plus en compte cette version. Nous 
+			avons d&ucirc; trouver un autre tutoriel fait pour la version 2. En gros, le probl&egrave;me &eacute;tait que le nom des propri&eacute;t&eacute;s dans le "manifest.json" n'est pas pareil d'une version &agrave; l'autre. Donc, le compilateur 
+			ne reconnaissait pas les propri&eacute;t&eacute;s du premier tutoriel et g&eacute;n&eacute;rait une erreur.
+		</p>
+		<br>
+		<h3>Fonctions asynchrones ("chrome.storage.get")</h3>
+		<p>
+			Lorsque nous enregistrons les URL pour les raccourcis, nous utilisons le "chrome.storage" et tout fonctionne tr&egrave;s bien. Par contre, pour le "keylogger", on enregistre les touches press&eacute;es et on essaie 
+			d'acc&eacute;der &agrave; l'information tout de suite apr&egrave;s alors que la fonction "chrome.storage.get" n'a pas eu le temps de s'ex&eacute;cuter au complet comme expliqu&eacute; un peu plus haut. Alors, il est impossible d'aller chercher 
+			l'information enregistr&eacute;e. Nous avons donc perdu beaucoup de temps pour cerner le probl&egrave;me et aussi pour essayer tout plein de solutions diff&eacute;rentes trouv&eacute;es sur Internet. Finalement, nous n'avons m&ecirc;me 
+			pas r&eacute;ussi &agrave; le faire fonctionner. Nous avons utilis&eacute; "local storage" au lieu de "chrome storage" pour le "keylogger" et le chronom&egrave;tre.
+		</p>
+		<br>
+	</div>
+
+	<div id="footer">
+		Copyright &copy; Les Grutiers
+	</div>
+
+</body>
+</html>
