@@ -52,33 +52,76 @@
 		<br>
 		<h3>Explication de l'outil et de la m&eacute;thodologie</h3>
 		<h4>Description des outils/logiciels utilis&eacute;s et/ou d&eacute;velopp&eacute;s</h4>
-		<p>Notepad++</p>
+		<p><b>Notepad++</b></p>
 		<p>
 			Version alternative et plus avanc&eacute;e du bloc-notes de Microsoft, Notepad++ est un &eacute;diteur de texte g&eacute;n&eacute;rique qui int&egrave;gre la coloration syntaxique de code source pour les langages HTML, JavaScript et bien d'autres. Au cours de notre projet, nous avons utilis&eacute; ce programme afin d'&eacute;crire nos scripts JavaScript et nos pages HTML, que l'on ex&eacute;cutait par le biais de notre extension Google Chrome. Facile et rapide et versatile d'utilisation, avec ses codes de couleur, Notepad++ a facilit&eacute; notre travail en nous offrant un environnement simple et dynamique.
 		</p>
-		<p>&Eacute;diteur HTML en ligne de w3school</p>
 		<p>
-			
+			Se rendre sur le site <a href="http://notepad-plus-plus.org/fr/download/v6.7.4.html ">http://notepad-plus-plus.org/fr/download/v6.7.4.html </a> <br>
+			T&eacute;l&eacute;charger le Notepad++ Installer<br>
+			Ex&eacute;cuter le programme<br>
+			<img src="./images/notepad.png" alt="notepad++">
+		</p>
+		<p><b>&Eacute;diteur HTML en ligne de w3school</b></p>
+		<p>
 			&Eacute;diteur HTML permettant de visualiser rapidement et facilement le code HTML ou JavaScript. Au cours de notre projet, nous avons utilis&eacute; cet &eacute;diteur, afin de pouvoir tester instantan&eacute;ment du code.
 		</p>
-		<p>MouseTrap</p>
 		<p>
-			
+			Se rendre sur le site <a href="http://www.w3schools.com/html/tryit.asp?filename=tryhtml_default">http://www.w3schools.com/html/tryit.asp?filename=tryhtml_default</a> <br>
+			Placer le code HTML/CSS/JavaScript d&eacute;sir&eacute; et cliquer sur le bouton "See Result"<br>
+			<img src="./images/w3school.png" alt="w3school">
+		</p>
+		<p><b>MouseTrap</b></p>
+		<p>
 			Librairie permettant la saisie et l'identification de touches de clavier. Au cours de notre projet, nous avons utilis&eacute; cette librairie afin de pouvoir cr&eacute;er notre option de raccourcis. Lorsque l'on presse les touches Shift et Z, sans &ecirc;tre dans un champ texte, on peut ouvrir les pages que l'on a pr&eacute;alablement plac&eacute;es dans les champs reli&eacute;s.
 		</p>
-		<p>JQuery</p>
+		<p>
+			Se rendre sur le site <a href="http://craig.is/killing/mice ">http://craig.is/killing/mice </a><br>
+			T&eacute;l&eacute;charger la librairie (dans l'introduction)<br>
+			Placer la libraire dans le dossier de l'extension Google Chrome<br>
+			Inclure la librairie dans le fichier manifest.json, dans le champ "content_scripts"<br>
+			Exemple :
+			<p id="code">
+				"content_scripts":<br>
+				[<br>
+				{<br>
+					"matches": ["<all_urls>"],<br>
+					"js": ["mousetrap.js"],<br>
+					"all_frames": true<br>
+				} ],<br>
+			</p>
+		</p>
+		<p><b>JQuery</b></p>
 		<p>
 			Librairie JavaScript permettant une manipulation simple et facile du code HTML pr&eacute;sent sur une page d'un navigateur internet. Au cours de notre projet, nous avons utilis&eacute; cette librairie dans le but de changer l'aspect (couleur, grosseur, police) du texte pr&eacute;sent sur la page.
 		</p>
+		<p>
+			Se rendre sur le site <a href="http://jquery.com/download/">http://jquery.com/download/</a><br>
+			T&eacute;l&eacute;charger la librairie<br>
+			Placer la librairie dans le dossier de l'extension Google Chrome<br>
+			Inclure la librairie dans le fichier manifest.json, dans le champ "content_scripts"<br>
+			Exemple :<br>
+			<p id="code">
+				"content_scripts": [<br>
+				{<br>
+				"matches": ["<all_urls>"],<br>
+					"js": [jquery.js"],<br>
+					"all_frames": true<br>
+				}<br>
+				]<br>
+			</p>
+		</p>
 		<h4>Notre projet: Grugrue - Extension Google Chrome</h4>
 		<p>
-			Extension Google Chrome multiusage, con&ccedil;ue pour les d&eacute;butants et exp&eacute;riment&eacute;s du navigateur Google Chrome. Cette application propose l'utilisation de fonctionnalit&eacute;s vari&eacute;es comme une option de raccourcis de pages internet, pour modifier la couleur, la police ainsi que la grosseur du texte, un chronom&egrave;tre affichant la dur&eacute;e de la navigation Google Chrome ainsi qu'un "keylogger".
+			Extension Google Chrome multiusage, con&ccedil;ue pour les d&eacute;butants et exp&eacute;riment&eacute;s du navigateur Google Chrome. Cette application propose l'utilisation de fonctionnalit&eacute;s vari&eacute;es comme une option de raccourcis de pages internet, pour modifier la couleur, la police ainsi que la grosseur du texte, un chronom&egrave;tre affichant la dur&eacute;e de la navigation Google Chrome ainsi qu'un "keylogger".<br>
 			
-			Lorsque l'on a le dossier de l'extension sur son ordi (Grugrue n'&eacute;tant pas encore sur le Chrome Web Store), on clique sur l'ic&ocirc;ne d'option du navigateur Google Chrome, pour les faire d&eacute;filer.
-			On clique ensuite sur "Historique".
-			On choisit l'option "Extensions" &agrave; gauche.
-			On clique sur le bouton "Charger l'extension non empaquet&eacute;e..."
-			On choisit le dossier de l'extension
+			Lorsque l'on a le dossier de l'extension sur son ordi (Grugrue n'&eacute;tant pas encore sur le Chrome Web Store), on clique sur l'ic&ocirc;ne d'option du navigateur Google Chrome, pour les faire d&eacute;filer.<br>
+			On clique ensuite sur "Historique".<br>
+			On choisit l'option "Extensions" &agrave; gauche.<br>
+			On clique sur le bouton "Charger l'extension non empaquet&eacute;e..."<br>
+			On choisit le dossier de l'extension<br>
+			
+			<img src="./images/grugrue.png" alt="grugrue">
 		</p>
 		<br>
 		<h3>Ex&eacute;cutable, sources et documentation</h3>
@@ -87,7 +130,11 @@
 		</p>
 		<h4>Raccourcis</h4>
 		<p>
-			Afin de pr&eacute;d&eacute;finir des raccourcis de page Web, on entre l'URL entier de la page que l'on veut sauvegarder en raccourci (une page par champ texte, pour un total de 5 pages). Apr&egrave;s avoir entr&eacute; les sites voulus, on clique sur le bouton "Sauvegarder". Finalement, on presse les touches Shift et Z en m&ecirc;me temps, lorsque notre curseur ne se situe pas dans un champ texte, afin de faire afficher les pages d&eacute;finies en raccourcis. Si l'on veut retirer une page des raccourcis, on n'a qu'&agrave; l'enlever du champ texte. 
+			Afin de pr&eacute;d&eacute;finir des raccourcis de page Web, on entre l'URL entier de la page que l'on veut sauvegarder en raccourci (une page par champ texte, pour un total de 5 pages). Apr&egrave;s avoir entr&eacute; les sites voulus, on clique sur le bouton "Sauvegarder". Finalement, on presse les touches Shift et Z en m&ecirc;me temps, lorsque notre curseur ne se situe pas dans un champ texte, afin de faire afficher les pages d&eacute;finies en raccourcis. Si l'on veut retirer une page des raccourcis, on n'a qu'&agrave; l'enlever du champ texte. <br>
+			Exemple: <br>
+			<img src="./images/raccourcis.png" alt="raccourcis"><br>
+			Cliquer sur le bouton sauvegarder plus bas<br>
+			<img src="./images/sauvegarder.png" alt="sauvegarder"><br>
 		</p>
 		<h4>Options de modification de texte</h4>
 		<p>
@@ -99,15 +146,23 @@
 
 			Pour changer le type de police, &eacute;crire le nom de la police dans le champ "Police". Pour le remettre &agrave; l'&eacute;tat normal, enlever le texte du champ.
 
-			Ensuite cliquer sur le bouton "Sauvegarder"
+			Ensuite cliquer sur le bouton "Sauvegarder".<br>
+			
+			Exemple<br>
+			<img src="./images/police.png" alt="police"><br>
 		</p>
 		<h4>Chronom&egrave;tre</h4>
 		<p>
-			Le chronom&egrave;tre affiche automatiquement le temps &eacute;coul&eacute; depuis le d&eacute;but de la session du navigateur Google Chrome. Pour recommencer le compteur, cliquer sur le bouton "Reset" &agrave; c&ocirc;t&eacute; de celui-ci.
+			Le chronom&egrave;tre affiche automatiquement le temps &eacute;coul&eacute; depuis le d&eacute;but de la session du navigateur Google Chrome. Pour recommencer le compteur, cliquer sur le bouton "Reset" &agrave; c&ocirc;t&eacute; de celui-ci.<br>
+			
+			Exemple<br>
+			<img src="./images/chrono.png" alt="chrono"><br>
 		</p>
 		<h4>KeyLogger</h4>
 		<p>
-			Le "KeyLogger" affiche automatiquement les touches press&eacute;es lorsque l'extension est ouverte. Pour recommencer l'affichage, cliquer sur le bouton "Reset" &agrave; c&ocirc;t&eacute; de celui-ci.
+			Le "KeyLogger" affiche automatiquement les touches press&eacute;es lorsque l'extension est ouverte. Pour recommencer l'affichage, cliquer sur le bouton "Reset" &agrave; c&ocirc;t&eacute; de celui-ci.<br>
+			Exemple<br>
+			<img src="./images/keylogger.png" alt="keylogger"><br>
 		</p>
 		<br>
 	</div>

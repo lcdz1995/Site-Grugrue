@@ -24,6 +24,9 @@
 	text-align:center;
     padding:5px;	 	 
 }
+#code {
+	font-family: Consolas;
+}
 
 a:link    {color:#000000; background-color:transparent; text-decoration:none}
 a:visited    {color:#000000; background-color:transparent; text-decoration:none}

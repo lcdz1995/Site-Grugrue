@@ -35,41 +35,104 @@
 			application dans le menu des extensions et qui permettra de changer certains param&egrave;tres au choix. Une autre propri&eacute;t&eacute; int&eacute;ressante du "manifest" 
 			est "background" qui permet de faire rouler des scripts en arri&egrave;re-plan. Finalement, nous avons utilis&eacute; la propri&eacute;t&eacute; "default_popup" pour 
 			d&eacute;finir le pop-up (page HTML) qui s'affichera lorsqu'on clique sur l'ic&ocirc;ne de notre extension dans le navigateur. Il existe des dizaines d'autres 
-			propri&eacute;t&eacute;s, nous avons pr&eacute;sent&eacute; bri&egrave;vement celles que nous avons utilis&eacute;. 
+			propri&eacute;t&eacute;s, nous avons pr&eacute;sent&eacute; bri&egrave;vement celles que nous avons utilis&eacute;. Voici un exemple simple de comment sont structur&eacute;es les donn&eacute;es dans le fichier "manifest" :
+			<p id="code">
+				{<br>
+					"name": "Extension incroyable",<br>
+					"manifest_version": 2,<br>
+					"description": "Extension SQL pour monsieur Chouinard.",<br>
+					"version": "1.2.3.4"<br>
+				}<br>
+			</p>
 		</p>
 		<br>
 		<h3>Page d'option</h3>
 		<p>
+			Comme dit un peu plus haut, la page d'option est une page HTML qui s'ouvrira en cliquant ici :
+		</p>
+		<img src="./images/option1.png" alt="options">
+		<p>
+			Ou bien l&agrave; :
+		</p>
+		<img src="./images/option2.png" alt="options">
+		<p>
 			Cette page contient ce que l'on veut. G&eacute;n&eacute;ralement elle contient des champs texte, des listes d&eacute;roulantes et un bouton "Sauvegarder" en bas comme toute bonne page d'option. 
+			Pour mettre un page d'option, il ne suffisait que d'&eacute;crire ceci dans le "manifest.json" :
+			<p id="code">
+				"options_page": "options.html"<br>
+			</p>
 		</p>
 		<br>
 		<h3>Scripts en "background"</h3>
 		<p>
 			Une application peut avoir des scripts qui s'ex&eacute;cutent en permanence en arri&egrave;re-plan.
+			On d&eacute;cide des scripts que l'on veut faire rouler dans le "manifest.json" comme ceci :
+			<p id="code">
+				"background": <br>
+				{<br>
+				"scripts": ["exemple.js"]<br>
+				}<br>
+			</p>
 			Dans notre cas, ceci nous a &eacute;t&eacute; utile pour notre "keylogger" parce qu'on a pu faire ex&eacute;cuter un script qui mettait un "listener" enregistrant les touches press&eacute;es sur chaque nouvel onglet.
 		</p>
 		<br>
 		<h3>"Mousetrap"</h3>
 		<p>
 			"Mousetrap" est une librairie qui nous &eacute;t&eacute; tr&egrave;s utile pour g&eacute;rer les raccourcis clavier en JavaScript dans notre extension. Tout ce qu'il faut faire, c'est t&eacute;l&eacute;charger le fichier "mousetrap.js" 
-			sur le site et le mettre avec les autres scripts. Ensuite, on peut lier les raccourcis clavier &agrave; des fonctions JavaScript.
+			sur le site et le mettre avec les autres scripts. 
+			Ensuite, on peut lier les raccourcis clavier &agrave; des fonctions JavaScript comme suit : 
+			<p id="code">
+				Mousetrap.bind('shift+z', function(e) <br>
+				{<br>
+					alert("exemple");<br>
+				}<br>
+			</p>
+			Dans ce cas, quand l'utilisateur cliquera sur "Shift" et la touche "Z" en m&ecirc;me temps, une alerte s'affichera &agrave; l'&eacute;cran. 
 		</p>
 		<br>
 		<h3>"Local storage"</h3>
 		<p>
 			Ceci est une fonctionnalit&eacute; qui se rapproche des "cookies", on stocke des donn&eacute;es localement dans le navigateur. Elle est tr&egrave;s simple d'utilisation et nous a &eacute;t&eacute; tr&egrave;s utile. Pour enregistrer une cha&icirc;ne de caract&egrave;res, 
 			il faut une cl&eacute; pour retrouver l'information par la suite et, bien s&ucirc;r une cha&icirc;ne caract&egrave;res. 
+			Voici comment on stocke le mot "onglet" :
+			<p id="code">
+				localStorage.setItem("myKey", "onglet");<br>
+			</p>
+			Pour reprendre cette cha&icirc;ne de texte et la mettre dans une variable, il nous faut que la cl&eacute; :
+			<p id="code">
+				var data = localStorage.getItem("myKey");<br>
+			</p>
 		</p>
 		<br>
 		<h3>"Chrome storage"</h3>
 		<p>
 			Ceci est une technologie ayant le m&ecirc;me principe que "local storage", sauf que cette derni&egrave;re se r&eacute;initialise quand le navigateur se ferme. "Chrome storage" garde les &eacute;l&eacute;ments en m&eacute;moire tant qu'on ne les supprime pas. 
+			Pour enregistrer un &eacute;l&eacute;ment, on fait comme suit :
+			<p id="code">
+				chrome.storage.sync.set({ "myKey" : "exemple" });<br>
+			</p>
+			Pour aller chercher notre cha&icirc;ne de caract&egrave;res enregistr&eacute;e, on fait :
+			<p id="code">
+				chrome.storage.sync.get("myKey", function(items) {<br>
+					//Code<br>
+				});<br>
+			</p>
+			Dans cet exemple, la fonction prend une fonction en param&egrave;tre. On appelle cela un "callback". Cette fonction sera ex&eacute;cut&eacute;e apr&egrave;s d&egrave;s que la fonction "chrome.storage.sync.get" aura fini de s'ex&eacute;cuter. C'est dans le "callback" qu'on aura acc&egrave;s &agrave; notre cha&icirc;ne de caract&egrave;res.
 		</p>
 		<br>
 		<h3>Fonctions asynchrones</h3>
 		<p>
 			Le JavaScript est un langage "monothread", donc une op&eacute;ration de longue dur&eacute;e peut emp&ecirc;cher d'autres processus de s'ex&eacute;cuter. Pour r&eacute;soudre le probl&egrave;me, on utilise les "callback" dont on a parl&eacute; un peu plus haut. 
 			Cela peut facilement rendre la programmation tr&egrave;s complexe. Nous avons d&ucirc; apprendre comment g&eacute;rer cette fa&ccedil;on de faire que nous n'avions jamais vue auparavant. 
+			Soit l'exemple suivant :
+			<p id="code">
+				console.log("1");<br>
+				chrome.storage.sync.get("myKey", function(items) {<br>
+					console.log("2");<br>
+				});<br>
+				console.log("3");<br>
+			</p>
+			La sortie sera "132" au lieu de "123", car le "chrome.storage.sync.get" prend du temps &agrave; s'ex&eacute;cuter, donc JavaScript va ex&eacute;cuter les lignes qui suivent la fonction et lorsque la fonction sera termin&eacute;e, le "callback" s'ex&eacute;cutera. Voil&agrave; pourquoi le deux viendra apr&egrave;s le trois.
 		</p>
 		<br>
 	</div>
